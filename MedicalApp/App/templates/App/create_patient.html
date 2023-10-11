@@ -1,0 +1,21 @@
+{% extends './index.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создать пациента</title>
+    <style>
+        /* Добавьте стили по вашему усмотрению */
+    </style>
+</head>
+<body>
+    <h1>Заполните анкету</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Создать пациента">
+    </form>
+</body>
+</html>
+{% endblock %}

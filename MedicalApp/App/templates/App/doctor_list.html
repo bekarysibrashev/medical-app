@@ -1,0 +1,24 @@
+{% extends './index.html' %}
+{% load static %}
+{% block content %}
+<header>
+    <h1>Список врачей</h1>
+</header>
+<div class="container">
+    {% for doctor in doctors %}
+    <div class="doctor-card">
+        <div class="img-control">
+            <img src="{{ doctor.img.url }}" alt="{{ doctor.name }}" class="doctor-photo">
+        </div>
+        <div class="doctor-info">
+            <h2 class="doctor-name">{{ doctor.name }}{{ doctor.surname }}</h2>
+            <p class="doctor-specialization">Специализация: {{ doctor.specialization }}</p>
+            <p class="doctor-history">
+                {{ doctor.info }}    
+            </p>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

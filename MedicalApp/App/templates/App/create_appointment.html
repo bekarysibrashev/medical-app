@@ -1,0 +1,23 @@
+{% extends './index.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Appointment</title>
+</head>
+<body>
+<div class="height">
+    <h1>Create Appointment</h1>
+    
+    <p>{{ doctor_type.name }}</p>  <!-- Отображение информации о враче -->
+  
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Create Appointment">
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}

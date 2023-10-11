@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href={% static "css/style.css" %}>
+    <title>Записаться к врачу</title>
+</head>
+<body>
+    <header class="header">
+        <div id="navigation">
+            <a class="header_button" href="{% url 'main' %}">
+                <p>Главная</p>
+            </a>
+            |
+            <a class="header_button" href="{% url 'doctor_list' %}">
+                <p>Врачи</p>
+            </a>
+            |
+            <a class="header_button" href="{% url 'choose_type' %}">
+                <p>Записаться на прием</p>
+            </a>
+            |
+            <a class="header_button" href="{% url 'us' %}">
+                <p>О нас</p>
+            </a>
+            |
+            <a class="header_button" disabled id="gray" href="#">
+                <p>Сотрудничество</p>
+            </a>
+    </div>
+    </header>
+
+{% block content %}
+{% endblock %}
+ 
+{% block another_content %}
+{% endblock %}
+
+<footer>
+    <div class="contact-info">
+        <h4>Контактная информация</h4>
+        <p><i class="fa fa-phone"></i> Телефон: +1-123-456-7890</p>
+        <p><i class="fa fa-envelope"></i> Email: info@yourwebsite.com</p>
+        <p><i class="fa fa-map-marker"></i> Адрес: ул. Примерная, 12345, Город</p>
+    </div>
+    <div class="quick-links">
+        <h4>Быстрые ссылки</h4>
+        <ul>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Наши проекты</a></li>
+            <li><a href="#">Блог</a></li>
+        </ul>
+    </div>
+    <div class="smart-tabs">
+        <h4>Вкладки</h4>
+        <ul>
+            <li><a href="#">Сотрудничество</a></li>
+            <li><a href="#">Исследования</a></li>
+            <li><a href="#">Инновации</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>

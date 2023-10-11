@@ -1,0 +1,21 @@
+{% extends './index.html' %}
+
+{% block content %}
+<div class="height">
+<h1>Какой врач вам нужен?</h1>
+<form method="post" >
+  {% csrf_token %}
+  <select name="item">
+    <option value="" selected disabled>Выберите доктора</option>
+    {% for item in items %}
+      <option value="{{ item.id }}">{{ item.specialization }}</option>
+    {% endfor %}
+  </select>
+
+  <a href="{%url  'choose_doctor' %}"><button type="submit">Найти врача</button></a>
+  
+</form>
+</div>
+
+{% endblock %}
+ 
